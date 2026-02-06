@@ -1,0 +1,5 @@
+{
+  "cloud_provider": "none",
+  "vault_path": "./src/vault/vault.json",
+  "encryption": "AES-256"
+}
