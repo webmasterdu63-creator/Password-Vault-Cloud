@@ -33,24 +33,31 @@ Il combine :
 
 Ce projet a été conçu pour être professionnel, sécurisé, et facile à intégrer dans un workflow AdminSys/DevOps.
 Password-Vault-Cloud/
+## 📁 Architecture du projet
+
+Voici la structure complète du projet, pensée pour être claire, modulaire et adaptée aux workflows AdminSys / DevOps :
+
+```
+Password-Vault-Cloud/
 │
-├── password_generator.ps1 / .sh     # Génération de mots de passe
-├── encrypt.ps1 / decrypt.ps1        # Chiffrement AES-256
-├── vault_lib.ps1                    # Gestion du coffre
-├── pvc.ps1 / pvc.sh                 # CLI principale
+├── password_generator.ps1 / .sh      # Génération de mots de passe
+├── encrypt.ps1 / decrypt.ps1         # Chiffrement AES-256
+├── vault_lib.ps1                     # Gestion du coffre
+├── pvc.ps1 / pvc.sh                  # CLI principale
 │
-├── cloud_upload.ps1                 # OneDrive
+├── cloud_upload.ps1                  # OneDrive
 ├── cloud_download.ps1
-├── gdrive_upload.ps1                # Google Drive
+├── gdrive_upload.ps1                 # Google Drive
 ├── gdrive_download.ps1
-├── dropbox_upload.ps1               # Dropbox
+├── dropbox_upload.ps1                # Dropbox
 ├── dropbox_download.ps1
 │
-├── vault.json                       # Coffre (non chiffré)
-├── vault.enc                        # Coffre chiffré
-├── settings.json                    # Configuration
+├── vault.json                        # Coffre (non chiffré)
+├── vault.enc                         # Coffre chiffré
+├── settings.json                     # Configuration
 │
-└── docs/                            # Documentation
+└── docs/                             # Documentation
+```
 
 🛡️ Sécurité
 
