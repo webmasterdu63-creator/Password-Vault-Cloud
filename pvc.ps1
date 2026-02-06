@@ -94,3 +94,5 @@ switch ($Command) {
         Write-Output "Entrée supprimée : $Service"
     }
 }
+pvc.ps1 sync upload
+pvc.ps1 sync download
