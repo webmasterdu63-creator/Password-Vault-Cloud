@@ -1,9 +1,4 @@
 #!/bin/bash
-# Password Vault Cloud - CLI (Bash)
-# Version: 0.1
-
-# TODO: Implement CLI commands
-#!/bin/bash
 
 CMD="$1"
 shift
@@ -19,7 +14,7 @@ case "$CMD" in
       esac
       shift
     done
-    "$SCRIPT_DIR/../generator/password_generator.sh" --length "$LENGTH" --upper --lower --digits --symbols
+    "$SCRIPT_DIR/../password_generator.sh" --length "$LENGTH" --upper --lower --digits --symbols
     ;;
 
   encrypt)
@@ -35,7 +30,7 @@ case "$CMD" in
       echo "Usage: pvc.sh encrypt --master <pwd> --input <file> --output <file>"
       exit 1
     fi
-    pwsh "$SCRIPT_DIR/../encryption/encrypt.ps1" -MasterPassword "$MASTER" -InputFile "$INPUT" -OutputFile "$OUTPUT"
+    pwsh "$SCRIPT_DIR/../encrypt.ps1" -MasterPassword "$MASTER" -InputFile "$INPUT" -OutputFile "$OUTPUT"
     ;;
 
   decrypt)
@@ -51,7 +46,7 @@ case "$CMD" in
       echo "Usage: pvc.sh decrypt --master <pwd> --input <file> --output <file>"
       exit 1
     fi
-    pwsh "$SCRIPT_DIR/../encryption/decrypt.ps1" -MasterPassword "$MASTER" -InputFile "$INPUT" -OutputFile "$OUTPUT"
+    pwsh "$SCRIPT_DIR/../decrypt.ps1" -MasterPassword "$MASTER" -InputFile "$INPUT" -OutputFile "$OUTPUT"
     ;;
 
   *)
