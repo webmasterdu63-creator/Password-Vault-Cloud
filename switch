@@ -1,0 +1,19 @@
+"sync" {
+    param(
+        [Parameter(Mandatory=$true)]
+        [ValidateSet("upload","download")]
+        [string]$Action
+    )
+
+    $settings = Get-Content "$scriptDir/../settings.json" -Raw | ConvertFrom-Json
+    $tokenFile = $settings.onedrive_token
+    $encFile = $settings.encrypted_vault_path
+
+    if ($Action -eq "upload") {
+        & "$scriptDir/../cloud_upload.ps1" -TokenFile $tokenFile -LocalFile $encFile
+    }
+
+    if ($Action -eq "download") {
+        & "$scriptDir/../cloud_download.ps1" -TokenFile $tokenFile -LocalFile $encFile
+    }
+}
