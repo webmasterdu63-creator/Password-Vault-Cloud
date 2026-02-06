@@ -8,6 +8,9 @@
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey?style=for-the-badge" />
   <img src="https://img.shields.io/github/license/webmasterdu63-creator/Password-Vault-Cloud?style=for-the-badge" />
 </p>
+<p align="center">
+  <img src="https://github.com/webmasterdu63-creator/Password-Vault-Cloud/blob/main/passwordVault.jpg" alt="Password-Vault-Cloud Banner" height="200px">
+</p>
 
 Gestionnaire de mots de passe chiffré, multi‑OS et multi‑cloud (OneDrive, Google Drive, Dropbox)  
 Un outil professionnel conçu pour les environnements AdminSys / DevOps.
