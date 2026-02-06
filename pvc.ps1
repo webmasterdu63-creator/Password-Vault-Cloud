@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet("generate","encrypt","decrypt")]
+    [ValidateSet("generate","encrypt","decrypt","sync-dropbox")]
     [string]$Command,
     [string]$MasterPassword,
     [string]$Input,
