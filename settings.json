@@ -16,3 +16,6 @@
   "onedrive_token": "./token.json",
   "gdrive_token": "./gdrive_token.json"
 }
+{
+  "dropbox_token": "./dropbox_token.json"
+}
