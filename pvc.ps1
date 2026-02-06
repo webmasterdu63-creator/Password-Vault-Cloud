@@ -32,3 +32,65 @@ switch ($Command) {
     }
 }
 
+param(
+    [Parameter(Mandatory=$true)]
+    [ValidateSet("generate","encrypt","decrypt","add","list","get","delete")]
+    [string]$Command,
+    [string]$MasterPassword,
+    [string]$Input,
+    [string]$Output,
+    [string]$Service,
+    [string]$Username,
+    [string]$Password,
+    [int]$Length = 16
+)
+
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$vaultPath = "$scriptDir/../vault.json"
+
+. "$scriptDir/../vault_lib.ps1"
+
+switch ($Command) {
+
+    "generate" {
+        & "$scriptDir/../password_generator.ps1" -Length $Length -Upper -Lower -Digits -Symbols
+    }
+
+    "encrypt" {
+        & "$scriptDir/../encrypt.ps1" -MasterPassword $MasterPassword -InputFile $Input -OutputFile $Output
+    }
+
+    "decrypt" {
+        & "$scriptDir/../decrypt.ps1" -MasterPassword $MasterPassword -InputFile $Input -OutputFile $Output
+    }
+
+    "add" {
+        if (-not $Service -or -not $Username -or -not $Password) {
+            Write-Error "Usage: pvc.ps1 add -Service <name> -Username <user> -Password <pwd>"
+            exit 1
+        }
+        Add-VaultEntry -Path $vaultPath -Service $Service -Username $Username -Password $Password
+        Write-Output "Entrée ajoutée : $Service"
+    }
+
+    "list" {
+        List-VaultEntries -Path $vaultPath
+    }
+
+    "get" {
+        if (-not $Service) {
+            Write-Error "Usage: pvc.ps1 get -Service <name>"
+            exit 1
+        }
+        Get-VaultEntry -Path $vaultPath -Service $Service | ConvertTo-Json -Depth 5
+    }
+
+    "delete" {
+        if (-not $Service) {
+            Write-Error "Usage: pvc.ps1 delete -Service <name>"
+            exit 1
+        }
+        Remove-VaultEntry -Path $vaultPath -Service $Service
+        Write-Output "Entrée supprimée : $Service"
+    }
+}
