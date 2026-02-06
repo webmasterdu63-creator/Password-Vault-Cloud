@@ -3,3 +3,9 @@
   "vault_path": "./src/vault/vault.json",
   "encryption": "AES-256"
 }
+{
+  "cloud_provider": "onedrive",
+  "vault_path": "./vault.json",
+  "encrypted_vault_path": "./vault.enc",
+  "onedrive_token": "./token.json"
+}
