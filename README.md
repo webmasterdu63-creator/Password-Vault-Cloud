@@ -1,4 +1,14 @@
 # Password-Vault-Cloud
+<p align="center">
+  <img src="https://img.shields.io/badge/PowerShell-7+-blue?logo=powershell&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Bash-Linux-green?logo=gnu-bash&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AES-256%20Encryption-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Multi--Cloud-OneDrive%20%7C%20GDrive%20%7C%20Dropbox-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/webmasterdu63-creator/Password-Vault-Cloud?style=for-the-badge" />
+</p>
+
 Gestionnaire de mots de passe chiffré, multi‑OS et multi‑cloud (OneDrive, Google Drive, Dropbox)  
 Un outil professionnel conçu pour les environnements AdminSys / DevOps.
 🚀 Présentation
